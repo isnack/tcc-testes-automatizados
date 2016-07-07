@@ -1,0 +1,25 @@
+{
+  "name": "uso-de-testes-automatizados",
+  "version": "1.0.0",
+  "description": "de conclus�ão de curso",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isnack/TCC-Uso-Testes-Automatizados-No-Desenvolvimento-Software.git"
+  },
+  "author": "Isnack Souza and Lais Vidal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isnack/TCC-Uso-Testes-Automatizados-No-Desenvolvimento-Software/issues"
+  },
+  "homepage": "https://github.com/isnack/TCC-Uso-Testes-Automatizados-No-Desenvolvimento-Software#readme",
+  "devDependencies": {
+    "casperjs": "^1.1.1",
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "phantomjs-prebuilt": "^2.1.7"
+  }
+}
