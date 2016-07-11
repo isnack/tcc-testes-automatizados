@@ -1,14 +1,14 @@
 {
   "name": "uso-de-testes-automatizados",
   "version": "1.0.0",
-  "description": "de conclus�ão de curso",
+  "description": "Trabalho de conclusão de curso sobre testes automatizados no desenvolvimento de software",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/isnack/TCC-Uso-Testes-Automatizados-No-Desenvolvimento-Software.git"
+    "url": "git+https://github.com/isnack/tcc-testes-automatizados.git"
   },
   "author": "Isnack Souza and Lais Vidal",
   "license": "ISC",
