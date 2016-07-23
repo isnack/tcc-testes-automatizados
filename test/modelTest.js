@@ -12,7 +12,7 @@ require('sinon-mongoose');
 describe('Bateria de testes do metodos do banco', function () {
 
     
-  var Funcionario = require('../models/Funcionario');
+  var Funcionario = require('../models/Funcionario.js');
   var FuncionarioMock = sinon.mock(Funcionario);
   
 
