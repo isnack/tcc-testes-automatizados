@@ -70,9 +70,9 @@ var routes ={
       
       
      var funcionario =JSON.parse(req.body)
-     var id =req.id;
-      
-    /* Funcionario.updateFuncionario(funcionario,function(err,result){
+     var id =funcionario._id;
+     
+     Funcionario.updateFuncionario({_id:id},funcionario,function(err,result){
     
         if(err==null){
             if(result != null){
@@ -86,7 +86,7 @@ var routes ={
     
     
     
-});*/
+});
       
   },
   removeFuncionarios:function(req,res,next){

@@ -18,7 +18,7 @@ server.use(restify.bodyParser());
 server.get('api/funcionarios',routes.getAllFuncionarios);
 server.get('api/funcionarios/:id',routes.getFuncionariosById);
 server.post('api/funcionarios',routes.createFuncionarios);
-server.put('api/funcionarios/:id',routes.updateFuncionarios);
+server.put('api/funcionarios',routes.updateFuncionarios);
 server.del('api/funcionarios/:id',routes.removeFuncionarios);
 server.get('api/folhaSal/:id',routes.getFolhaSalarial);
 
