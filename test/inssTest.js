@@ -1,5 +1,5 @@
 var expect = require('chai').expect;
-var inssService = require('../app/INSSService')
+var inssService = require('../app/services/INSSService')
 
 describe('Bateria de testes do módulo de calculo do INSS',function(){
     
