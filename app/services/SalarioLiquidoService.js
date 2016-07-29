@@ -16,7 +16,11 @@ calculateSal:function (salario) {
     var salarioDescontoInss = salarioBruto-descontoInss;
     console.log("salario descontado inss "+ salarioDescontoInss );
 
-    
+    var descontoIR = IRService.calculate(salarioDescontoInss);
+    console.log("desconto IR "+ descontoIR );
+
+    var salarioLiquido = salarioDescontoInss-descontoIR;
+    console.log(salarioLiquido);
 
 }
 
