@@ -13,9 +13,12 @@ var IRService = {
         }
         else if (salario >= "2826.66" && salario <= "3751.05") {
                 return (salario * 0.15) - 354.80;
-        }
+        } else if (salario >= "3751.06" && salario <= "4664.68"){
+                return (salario * 0.225) - 636.13;
+}
 
-    }
+
+}
 
 
 
