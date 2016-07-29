@@ -13,7 +13,11 @@ calculateSal:function (salario) {
     var descontoInss = INSSService.calculate(salarioBruto);
     console.log("desconto inss "+ descontoInss );
 
+    var salarioDescontoInss = salarioBruto-descontoInss;
+    console.log("salario descontado inss "+ salarioDescontoInss );
+
     
+
 }
 
 
