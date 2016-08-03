@@ -9,7 +9,7 @@ require('sinon-mongoose');
 //schema
 
 
-describe('Bateria de testes do metodos do banco', function () {
+describe('Bateria de testes do módulo do banco', function () {
 
     
   var Funcionario = require('../models/funcionario');
