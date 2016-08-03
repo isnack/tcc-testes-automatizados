@@ -10,16 +10,17 @@ var SalarioLiquidoService = {
 calculateSal:function (salario) {
 
     var salarioBruto = salario;
-    var descontoInss = INSSService.calculate(salarioBruto);
-    console.log("desconto inss "+ descontoInss );
 
-    var salarioDescontoInss = salarioBruto-descontoInss;
-    console.log("salario descontado inss "+ salarioDescontoInss );
+    var valorDescontadoInss = INSSService.calculate(salarioBruto);
+    console.log("desconto inss "+ valorDescontadoInss );
 
-    var descontoIR = IRService.calculate(salarioDescontoInss);
-    console.log("desconto IR "+ descontoIR );
+    var salarioComDescontoInss = salarioBruto - valorDescontadoInss;
+    console.log("salario com descontado inss "+ salarioComDescontoInss );
 
-    var salarioLiquido = salarioDescontoInss-descontoIR;
+    var valorDescontadoIR = IRService.calculate(salarioComDescontoInss);
+    console.log("desconto IR " + valorDescontadoIR );
+
+    var salarioLiquido = salarioComDescontoInss - valorDescontadoIR;
     console.log(salarioLiquido);
 
 }

@@ -23,6 +23,17 @@ describe('Bateria de teste do modulo IR', function () {
             expect(643.1400000000002).to.equal(IRService.calculate(5500))
        });
 
+       it(' testando valor de IR negativo', function () {
+           expect(0).to.equal(IRService.calculate(-1979))
+
+       });
+
+       it('testando valores zerados', function () {
+           expect(0).to.equal(IRService.calculate(0))
+
+       });
+
+
 
 
 
