@@ -5,7 +5,7 @@ var inssService = require('../app/services/INSSService')
 describe('Bateria de testes do módulo de calculo do INSS',function(){
     
     it('Testando faixa de desconto do INSS de 8%',function(){
-        expect(81).to.equal(inssService.calculate(1000));
+        expect(80).to.equal(inssService.calculate(1000));
     });
     it('Testando faixa de desconto do INSS de 9%',function(){
         expect(153).to.equal(inssService.calculate(1700));
