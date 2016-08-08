@@ -13,9 +13,9 @@
   "author": "Isnack Souza and Lais Vidal",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/isnack/TCC-Uso-Testes-Automatizados-No-Desenvolvimento-Software/issues"
+    "url": "https://github.com/isnack/tcc-testes-automatizados/issues"
   },
-  "homepage": "https://github.com/isnack/TCC-Uso-Testes-Automatizados-No-Desenvolvimento-Software#readme",
+  "homepage": "https://github.com/isnack/tcc-testes-automatizados#readme",
   "devDependencies": {
     "casperjs": "^1.1.1",
     "chai": "^3.5.0",
