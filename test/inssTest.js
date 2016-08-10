@@ -5,22 +5,22 @@ var inssService = require('../app/services/INSSService')
 describe('Bateria de testes do módulo de calculo do INSS',function(){
     
     it('Testando faixa de desconto do INSS de 8%',function(){
-        expect(80).to.equal(inssService.calculate(1000));
+        expect(inssService.calculate(1000)).to.equal(80);
     });
     it('Testando faixa de desconto do INSS de 9%',function(){
-        expect(153).to.equal(inssService.calculate(1700));
+        expect(inssService.calculate(1700)).to.equal(153);
     });
     it('Testando faixa de desconto do INSS de 11%',function(){
-        expect(297).to.equal(inssService.calculate(2700));
+        expect(inssService.calculate(2700)).to.equal(297);
     });
     it('Testando teto máximo do INSS',function(){
-        expect(570.88).to.equal(inssService.calculate(5980.96));
+        expect(inssService.calculate(5980.96)).to.equal(570.88);
     });
     it('Testando valores zerados de salario',function(){
-        expect(0).to.equal(inssService.calculate(0));
+        expect(inssService.calculate(0)).to.equal(0);
     });
     it('Testando valores negativos',function(){
-        expect(0).to.equal(inssService.calculate(-1569));
+        expect(inssService.calculate(-1569)).to.equal(0);
     });
     
 });
