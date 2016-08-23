@@ -4,7 +4,10 @@
   "description": "Trabalho de conclusão de curso sobre testes automatizados no desenvolvimento de software",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coveralls-local":"istanbul cover ./node_modules/mocha/bin/_mocha",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info |             ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+ 
   },
   "repository": {
     "type": "git",
@@ -19,7 +22,9 @@
   "devDependencies": {
     "casperjs": "^1.1.1",
     "chai": "^3.5.0",
+    "coveralls": "^2.11.12",
     "mocha": "^2.5.3",
+    "mocha-lcov-reporter": "^1.2.0",
     "mongoose": "^4.5.4",
     "phantomjs-prebuilt": "^2.1.7",
     "restify": "^4.1.1",
