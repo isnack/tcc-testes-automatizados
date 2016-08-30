@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "coveralls-local":"istanbul cover ./node_modules/mocha/bin/_mocha",
+    "coveralls-local": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info |             ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
- 
   },
   "repository": {
     "type": "git",
@@ -20,6 +19,8 @@
   },
   "homepage": "https://github.com/isnack/tcc-testes-automatizados#readme",
   "devDependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
     "casperjs": "^1.1.1",
     "chai": "^3.5.0",
     "coveralls": "^2.11.12",

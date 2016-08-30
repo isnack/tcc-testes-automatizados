@@ -14,7 +14,13 @@ server.use(function(req,res,next){
 });
 
 server.use(restify.bodyParser());
-
+server.use(
+  function crossOrigin(req,res,next){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    return next();
+  }
+);
 server.get('api/funcionarios',routes.getAllFuncionarios);
 server.get('api/funcionarios/:id',routes.getFuncionariosById);
 server.post('api/funcionarios',routes.createFuncionarios);

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="pt-br" ng-app="folhaPagamento">
+<head>
+<meta charset="UTF-8">
+ <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<script src="../node_modules/angular/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="js/Services/funcionarioServices.js"></script>
+<script src="js/Controllers/listFuncionarioController.js"></script>
+<script src="js/Directives/ngReallyClick.js"></script>
+<title>Funcionários</title>
+</head>
+<body ng-controller="listFuncionarioController">
+
+
+<div class="barra-superior jumbotron">Funcionários</div>
+<div id="buttonAddFunc"><button type="button" class="btn btn-primary " ng-click="abrirAdicionarFuncionario()">Adicionar</button></div>
+
+<div class="divTable">
+ <table id="tabela" class="table table-striped" ng-repeat="funcionario in funcionarios">
+  <tr>
+    <th>Nome</th>
+    <th>Ação</th>
+    <th>Ação</th>
+    <th>Ação</th>
+  </tr>
+  <tr>
+    <td class="">{{funcionario.nome}} </td>
+    <td><button type="button" class="btn btn-default">Gerar Folha</button></td>
+    <td><button type="button" class="btn btn-default">Atualizar</button></td>
+    <td><button type="button" class="btn btn-default" ng-really-message="Tem certeza de realizar essa exclusão ?" ng-really-click="deleteFuncionario(funcionario)">Excluir</button></td>
+  </tr>
+
+</table>
+</div>
+
+</body>
+</html>

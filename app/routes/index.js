@@ -47,10 +47,12 @@ var routes ={
       
   },
   createFuncionarios:function(req,res,next){
-      var funcionario =JSON.parse(req.body)
-      
+       
+     var funcionario =req.body;
+       
+      console.log(funcionario);
      Funcionario.add(funcionario,function(err,result){
-    
+     console.log(result);
         if(err==null){
             if(result != null){
                res.send(200,result);
