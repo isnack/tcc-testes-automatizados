@@ -42,3 +42,6 @@ jspm_packages
 
 # php storm
 .idea/
+
+#report
+/mochawesome-reports
