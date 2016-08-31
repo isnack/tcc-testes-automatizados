@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha",
     "coveralls-local": "istanbul cover ./node_modules/mocha/bin/_mocha",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info |             ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info |             ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+	"report": "rm -fr mochawesome-reports | mocha --reporter mochawesome"
   },
   "repository": {
     "type": "git",
@@ -26,10 +27,14 @@
     "coveralls": "^2.11.12",
     "mocha": "^2.5.3",
     "mocha-lcov-reporter": "^1.2.0",
+    "mochawesome": "^1.5.2",
     "mongoose": "^4.5.4",
     "phantomjs-prebuilt": "^2.1.7",
     "restify": "^4.1.1",
     "sinon": "^1.17.4",
     "sinon-mongoose": "^1.2.1"
+  },
+  "dependencies": {
+    "mongodb": "^2.2.9"
   }
 }
