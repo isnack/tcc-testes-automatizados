@@ -118,7 +118,7 @@ var routes ={
        var id=req.params.id;
       Funcionario.findById(id,function(err,result){
          
-         
+        
           res.send(200,folhaPagamento.generate(result));
           
       });

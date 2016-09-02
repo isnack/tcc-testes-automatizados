@@ -5,7 +5,7 @@ var folhaPagamentoService = require('../app/services/FolhaPagamentoService');
 describe('Testa se os descontos de cada serviço está como especificado',function(){
     
     it('Se contém os atributos funcionario,descontos,salarioLiquido',function(){
-     var funcionario ={
+     var funcionario =[{
                         
                         "nome" : "Isnack Souza",
                         "endereco" : "Avenida Dr Lisboa",
@@ -16,7 +16,7 @@ describe('Testa se os descontos de cada serviço está como especificado',functi
                         "salario" : 4500,
                         "__v" : 0
          
-                       };    
+                      }];    
         var folhaPagamento = folhaPagamentoService.generate(funcionario);
         
          expect(folhaPagamento).to.have.property('descontos');
