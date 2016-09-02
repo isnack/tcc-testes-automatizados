@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Funcionario = require('../../models/funcionario');
+var folhaPagamento = require('../services/FolhaPagamentoService');
 mongoose.connect('mongodb://localhost:27017/funcionario');
 
 var routes ={
@@ -114,7 +115,14 @@ var routes ={
   },
   getFolhaSalarial:function(req,res,next){
       
-      res.send(200,'folha');
+       var id=req.params.id;
+      Funcionario.findById(id,function(err,result){
+         
+         
+          res.send(200,folhaPagamento.generate(result));
+          
+      });
+      
       
       
   }
