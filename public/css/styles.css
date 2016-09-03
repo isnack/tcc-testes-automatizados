@@ -61,6 +61,14 @@
 h3{
 
 	text-align: center;
+	font-family: "ff-meta-web-pro-1", "ff-meta-web-pro-2", Arial, "Helvetica Neue", sans-serif;
+	font-size: 50px;
+}
+h4{
+	text-align: center;
+	font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	font-size: 70px;
+
 }
 .img-circle{
 	width: 600px;
@@ -71,4 +79,15 @@ h3{
 }
 #botao{
 	font-size: 140%;
+	position: relative;
+}
+
+#loginForm{
+
+	width: 700px;
+	text-align: center;
+	margin-top: 200px;
+	margin-left: auto;
+	margin-right: auto;
+
 }
