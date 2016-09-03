@@ -1,6 +1,6 @@
 angular.module('folhaPagamento').factory('funcionarioServices',function($http){
     
-    var _getFuncionarios,_addFuncionario,_removeFuncionario
+    var _getFuncionarios,_addFuncionario,_removeFuncionario,_getFuncionario;
     
     _getFuncionarios = function(){
              
@@ -14,11 +14,17 @@ angular.module('folhaPagamento').factory('funcionarioServices',function($http){
         
     _removeFuncionario = function(funcionario){
         return $http.delete("http://localhost:3000/api/funcionarios/"+funcionario._id+"");
+    },
+    
+    _getFuncionario = function(id){
+        
+        return $http.get("http://localhost:3000/api/funcionarios/"+id);
     }
     
     return {
             getFuncionarios:_getFuncionarios,
             addFuncionario:_addFuncionario,
-            removeFuncionario:_removeFuncionario
+            removeFuncionario:_removeFuncionario,
+            getFuncionario:_getFuncionario
            };
 });
