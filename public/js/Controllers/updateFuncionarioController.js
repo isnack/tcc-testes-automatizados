@@ -2,10 +2,19 @@ angular.module("folhaPagamento").controller("updateFuncionarioController",functi
      var carregarFuncionario,
          idFuncionario,funcionarioCtl=[];
        $scope.funcionario=[];
+    
+    
+    $scope.atualizarFuncionario=function(funcionario){
+        funcionarioServices.updateFuncionario(funcionario).success(function(data){
+            $scope.message = "Atualizado com sucesso" + data;
+        }).error(function (data, status) {
+			$scope.message = "Aconteceu um problema: " + data;
+		});
+    }
    
      carregarFuncionario =function(id){  
       funcionarioServices.getFuncionario(id).success(function (funcionario) {
-        funcionarioCtl.data =funcionario; 
+        $scope.funcionario =funcionario[0]; 
          
 			
 		}).error(function (data, status) {
@@ -14,9 +23,8 @@ angular.module("folhaPagamento").controller("updateFuncionarioController",functi
     return funcionarioCtl;
    };
     idFuncionario= $location.search().id;  
-   $scope.funcionario= carregarFuncionario(idFuncionario);
-    var teste = carregarFuncionario(idFuncionario);
-     console.log(teste.nome);
-     console.log("foi ? "+$scope.funcionario);
+    carregarFuncionario(idFuncionario);
+   
+    
     
 });
