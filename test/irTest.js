@@ -1,7 +1,4 @@
-/**
- * Created by Lais on 29/07/2016.
- */
-
+/*** Created by Lais on 29/07/2016.*/
 var expect = require('chai').expect;
 var IRService = require('../app/services/IRService')
 
@@ -32,9 +29,5 @@ describe('Bateria de testes do modulo IR', function () {
            expect(0).to.equal(IRService.calculate(0))
 
        });
-
-
-
-
 
 });
