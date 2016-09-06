@@ -24,7 +24,12 @@ angular.module("folhaPagamento").controller("listFuncionarioController",function
     
     $scope.abrirAdicionarFuncionario = function(){
         
-       $window.location.href="cadastroFuncionario.html"
+       $window.location.href="cadastroFuncionario.html";
+    };
+    
+     $scope.abrirGerarFolha = function(funcionario){
+        
+       $window.location.href="gerarFolhaSalarial.html#/?id="+funcionario._id;
     };
     
     $scope.abrirAtualizaFuncionario =function(funcionario){
