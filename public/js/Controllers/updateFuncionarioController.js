@@ -1,16 +1,22 @@
-angular.module("folhaPagamento").controller("updateFuncionarioController",function($scope,funcionarioServices,$location){
+angular.module("folhaPagamento").controller("updateFuncionarioController",function($scope,$window,funcionarioServices,$location){
      var carregarFuncionario,
-         idFuncionario,funcionarioCtl=[];
+         idFuncionario;
        $scope.funcionario=[];
-    
+       $scope.message=null;
     
     $scope.atualizarFuncionario=function(funcionario){
         funcionarioServices.updateFuncionario(funcionario).success(function(data){
-            $scope.message = "Atualizado com sucesso" + data;
+            $scope.message = "Funcionário atualizado com sucesso";
         }).error(function (data, status) {
-			$scope.message = "Aconteceu um problema: " + data;
+            console.dir("Aconteceu um problema: " + JSON.stringify(data));
+			$scope.message = "Não foi possível realizar essa operação";
 		});
-    }
+    };
+    
+    $scope.voltarPagina =function(){
+        
+        $window.location.href="listarFuncionarios.html";
+    };
    
      carregarFuncionario =function(id){  
       funcionarioServices.getFuncionario(id).success(function (funcionario) {
@@ -20,7 +26,8 @@ angular.module("folhaPagamento").controller("updateFuncionarioController",functi
 		}).error(function (data, status) {
 			$scope.message = "Aconteceu um problema: " + data;
 		});
-    return funcionarioCtl;
+         
+        
    };
     idFuncionario= $location.search().id;  
     carregarFuncionario(idFuncionario);

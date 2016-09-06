@@ -9,7 +9,7 @@ angular.module("folhaPagamento").controller("addFuncionarioController",function(
             $scope.funcionarioForm.$setPristine();
         }).error(function (data) {
               console.log("Aconteceu um problema: " + data);
-               $scope.message = "Não foi possível adicionar funcionário";
+              $scope.message = "Não foi possível adicionar funcionário";
 		});              
     };
     
