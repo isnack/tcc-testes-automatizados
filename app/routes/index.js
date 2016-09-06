@@ -72,7 +72,7 @@ var routes ={
   updateFuncionarios:function(req,res,next){
       
       
-     var funcionario =JSON.parse(req.body)
+     var funcionario =req.body;
      var id =funcionario._id;
      
      Funcionario.updateFuncionario({_id:id},funcionario,function(err,result){
