@@ -19,12 +19,20 @@ angular.module('folhaPagamento').factory('funcionarioServices',function($http){
     _getFuncionario = function(id){
         
         return $http.get("http://localhost:3000/api/funcionarios/"+id);
+    },
+    _updateFuncionario = function(funcionario){
+        
+         return $http.put("http://localhost:3000/api/funcionarios", funcionario);
+    },
+    _folhaSalarial = function(funcionario){
+       return $http.get("http://localhost:3000/api/folhaSal/"+funcionario._id+"");
     }
-    
     return {
             getFuncionarios:_getFuncionarios,
             addFuncionario:_addFuncionario,
             removeFuncionario:_removeFuncionario,
-            getFuncionario:_getFuncionario
-           };
+            getFuncionario:_getFuncionario,
+            updateFuncionario:_updateFuncionario,
+            folhaSalarial:_folhaSalarial
+           }
 });
