@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 var Funcionario = require('../../models/funcionario');
+var Usuario = require('../../models/login');
 var folhaPagamento = require('../services/FolhaPagamentoService');
+var loginServices = require('../services/LoginService');
 mongoose.connect('mongodb://localhost:27017/funcionario');
 
 var routes ={
@@ -125,7 +127,54 @@ var routes ={
       
       
       
-  }
+  },
+    
+    authenticationUser:function(req,res,next){
+      var usuario =JSON.parse(req.body);
+        console.log(usuario);
+      Usuario.find({$and:[{usuario:usuario.usuario },{senha:usuario.senha }]},function(err,result){
+         
+        if(err==null){
+            if(result != null){
+               console.log(result);
+           res.send(200,loginServices.redirecionar(result));
+        }else{
+             console.log(result);
+            res.send(404,loginServices.redirecionar(result));
+           //res.send(404); 
+        }
+        }else{
+            res.send(500,err);
+        }
+            
+        
+          
+          
+      }); 
+    },
+    
+    createUser:function(req,res,next){
+        
+        var usuario =req.body;    
+        var usuario={
+            usuario:"admin",
+            senha:"admin"            
+        };
+        
+     Usuario.add(usuario,function(err,result){
+     console.log(result);
+        if(err==null){
+            if(result != null){
+               res.send(200,result);
+            }else{
+               res.send(404); 
+            }
+        }else{
+            res.send(500,err);
+        }
+        
+     });
+    }
     
     
     
