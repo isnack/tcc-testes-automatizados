@@ -1,26 +1,34 @@
-/**
- * Created by Lais on 03/09/2016.
- */
 
 
-angular.module("folhaPagamento").controller("loginController",function($scope, $window){
-     $scope.login = [];
-
+angular.module("folhaPagamento").controller("loginController",function($scope, $window,loginService){
 
     $scope.efetuarLogin=function(login){
-            alert(login.usuario);
-        loginServices.loga(login).success(function(data){
+
+
+        loginService.autenticacao(login).success(function(data){
+
+            if(data.message){
+                $scope.message = data.message;
+            }
+            else{
+                $scope.autenticar(data.url);
+            }
+
             delete $scope.login;
             $scope.loginForm.$setPristine();
         }).error(function (data) {
-            $scope.message = "Aconteceu um problema: " + data;
-        });
-
+            $scope.message =  data.message;
+        })
 
     };
 
     $scope.abrirLogin =function(){
 
-        $window.location.href="login.html";
+        $window.location.href = "login.html";
+
     };
+
+    $scope.autenticar = function (url) {
+        $window.location.href = url;
+    }
 });
