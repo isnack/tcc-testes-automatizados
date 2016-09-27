@@ -1,3 +1,5 @@
+
+
 var INSSService = {
     
     calculate:function(sal){
@@ -19,3 +21,13 @@ var INSSService = {
 };
 
 module.exports = INSSService;
+
+
+
+
+
+
+
+
+
+

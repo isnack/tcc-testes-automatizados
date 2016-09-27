@@ -124,13 +124,10 @@ var routes ={
           res.send(200,folhaPagamento.generate(result));
           
       });
-      
-      
-      
   },
     
     authenticationUser:function(req,res,next){
-      var usuario =JSON.parse(req.body);
+      var usuario = req.body;
         console.log(usuario);
       Usuario.find({$and:[{usuario:usuario.usuario },{senha:usuario.senha }]},function(err,result){
          
