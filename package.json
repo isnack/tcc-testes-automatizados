@@ -8,7 +8,7 @@
     "preinstall": "npm i -g istanbul",
     "coveralls-local": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info |             ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
-	"report": "rm -fr mochawesome-reports | mocha --reporter mochawesome"
+    "report": "rm -fr mochawesome-reports | mocha --reporter mochawesome"
   },
   "repository": {
     "type": "git",

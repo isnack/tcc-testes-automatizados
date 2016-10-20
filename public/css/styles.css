@@ -42,7 +42,7 @@
     
 }
 
-#tabela tr td:nth-child(1){
+.tabela tr td:nth-child(1){
     width:30%;
 }
 
