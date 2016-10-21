@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "preinstall": "npm i -g istanbul",
+    "testFunctional":"./node_modules/.bin/casperjs test testFuncional/functionalTest.js",
+    "start": "http-server ./ -p 8585",
+    "restServer":"node server.js",
+    "preinstall": "npm i -g istanbul http-server",
     "coveralls-local": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info |             ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "report": "rm -fr mochawesome-reports | mocha --reporter mochawesome"
@@ -23,7 +26,7 @@
   "devDependencies": {
     "angular": "^1.5.8",
     "bootstrap": "^3.3.7",
-    "casperjs": "^1.1.1",
+    "casperjs": "^1.1.3",
     "chai": "^3.5.0",
     "coveralls": "^2.11.12",
     "mocha": "^2.5.3",

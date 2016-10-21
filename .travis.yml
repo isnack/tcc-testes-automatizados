@@ -7,8 +7,11 @@ node_js:
     - "6"
 before_script:
     - npm install
+    - npm start
+    - npm run restServer
 script:
     - npm test
+    - npm run testFunctional
 after_script:
     - npm run coveralls
 

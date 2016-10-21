@@ -22,7 +22,7 @@ var formulario = {
 
         casper.then(function () {
 
-            this.capture('teste5.png');
+            this.capture('img/teste5.png');
         });
         // Testando validação dos campos
         casper.then(function () {
@@ -40,7 +40,7 @@ var formulario = {
         });
 
         casper.then(function () {
-            this.capture('teste5.png');
+            this.capture('img/teste5.png');
 
         });
         casper.wait(2000, function () {
@@ -69,7 +69,7 @@ var formulario = {
         });
 
         casper.then(function () {
-            this.capture('teste7.png');
+            this.capture('img/teste7.png');
 
         });
         casper.wait(2000, function () {
@@ -85,7 +85,7 @@ var formulario = {
         });
     },
     testAutenticacao:function(casper){
-        casper.start('file:///C:/Users/Isnack%20Developer/Dropbox/Uso-de-testes-automatizados2/public/index.html');
+        casper.start('http://localhost:8585/public/');
 
 
         casper.then(function (casper) {
@@ -98,7 +98,7 @@ var formulario = {
         });
 
         casper.then(function () {
-            this.capture('teste2.png');
+            this.capture('img/teste2.png');
         });
 
   // Proximo passo é somente informar o login sem a senha
@@ -106,7 +106,7 @@ var formulario = {
             this.sendKeys('#usuario', 'admin');
         });
         casper.then(function () {
-            this.capture('teste3.png');
+            this.capture('img/teste3.png');
         });
   //Proximo passo é verificar a validação dos campos de autenticação e verificar se foi informado um erro    
         casper.then(function () {
@@ -138,7 +138,7 @@ var formulario = {
             this.echo("Esperando Entrada no Sistema!");
         });
         casper.then(function () {
-            this.capture('teste4.png');
+            this.capture('img/teste4.png');
         });
 
   //Proximo passo testar se está logado
@@ -169,7 +169,7 @@ casper.test.begin('assertExists() tests', 8, function (test) {
             });
         };
         oldLines = this.getResultsCount();
-        this.capture('teste5.png');
+        this.capture('img/teste5.png');
     });
     //Entrando na pagina de Cadastro de Funcionários
     casper.then(function () {
@@ -178,15 +178,15 @@ casper.test.begin('assertExists() tests', 8, function (test) {
 
     //Teste de inserção de funcionário e validação do formulário 
     formulario.testInserirFuncionaorio(casper, funcionario);
-
+    casper.wait(3000, function () {
+            this.echo("Adição do funcionário!");
+     });
 
     //Verificando se o funcionário está sendo listado, alteração na quantidade de linhas
     casper.then(function () {
         test.assertElementCount('table', oldLines + 1, 'Verificando se houve alteração na quantidade de funcionários para mais');
     });
-    casper.wait(3000, function () {
-            this.echo("Adição do funcionário!");
-        });
+ 
     casper.then(function () {
         oldLines = this.getResultsCount();
     });
@@ -197,7 +197,7 @@ casper.test.begin('assertExists() tests', 8, function (test) {
     
     formulario.testGerarFolhaSalarial(casper);
 
-   /* casper.then(function () {
+   casper.then(function () {
         this.click(x('//*[@id="tabela' + (this.getResultsCount() - 1) + '"]/tbody/tr[2]/td[3]/button'));
 
     });
@@ -222,8 +222,8 @@ casper.test.begin('assertExists() tests', 8, function (test) {
     });
     casper.then(function () {
 
-        this.capture('teste5.png');
-    });*/
+        this.capture('img/teste5.png');
+    });
     casper.run(function () {
         test.done();
     });
