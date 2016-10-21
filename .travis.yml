@@ -1,12 +1,16 @@
 services:
     - mongodb
-    - npm run restServer & sleep 3
+     & sleep 3
 language: node_js
 node_js:
     - "4"
     - "6"
+ env:
+    - TEST_SUITE=units
+    - TEST_SUITE=functional
 before_script:
     - npm install
+    - npm run restServer
 script:
     - npm test
 after_script:
