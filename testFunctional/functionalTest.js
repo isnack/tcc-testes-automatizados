@@ -9,7 +9,7 @@ var funcionario = {
     estado: 'Minas Gerais',
     bairro: 'Centro',
     dependentes: '0',
-    salario: '2500.50'
+    salario: '2500.00'
 
 };
 
@@ -78,10 +78,13 @@ var formulario = {
 
         //Testando se o funcionário foi adicionado com sucesso
         casper.then(function () {
-            this.test.assertTextExists('Funcionário atualizado com sucesso', 'Testando se no corpo da pagina Após clicar em cadastrar se contém a frase "Funcionário atualizado com sucesso"');
+            this.test.assertTextExists('Funcionário atualizado com sucesso', 'Testando se no corpo da pagina Após clicar em atualizar se contém a frase "Funcionário atualizado com sucesso"');
         });
         casper.then(function () {
             this.click(x('/html/body/div/form/input[2]'));
+        });
+           casper.wait(3000, function () {
+            this.echo("Esperando Resposta do Servidor!!");
         });
     },
     testAutenticacao:function(casper){
@@ -147,16 +150,37 @@ var formulario = {
 
         });
     },
-    testGerarFolhaSalarial:function(casper){
-        
-     
-         casper.then(function () {
-            this.test.assertTextExists('27.86'&&'225.04', 'Testando os valores de desconto do inss e ir"');
+    testGerarFolhaSalarial:function(casper,descontoIr,descontoInss,salario,nome){
+        casper.wait(3000, function () {
+            this.echo("Esperando Pagina Carregar Proxima página!!");
         });
+     
+        casper.then(function () {
+            this.test.assertTextExists(descontoIr, 'Testando o valor de desconto IR está impresso');
+        });
+        casper.then(function () {
+            this.capture('img/teste55.png');
+            this.test.assertTextExists(descontoInss, 'Testando o valor de desconto INSS está impresso');
+        });
+        casper.then(function () {
+            this.test.assertTextExists(salario, 'Testando o valor salario está impresso');
+        });
+        casper.then(function () {
+            this.test.assertTextExists(nome, 'Testando o nome está impresso');
+        });
+        
+        casper.waitForSelector(x('/html/body/input'), function () {
+            this.click(x('/html/body/input'));
+            
+        });
+           casper.wait(3000, function () {
+            this.echo("Esperando Pagina Carregar Proxima página!!");
+        });
+        
     }
   }
 
-casper.test.begin('assertExists() tests', 8, function (test) {
+casper.test.begin('Teste Funcional da Folha de Pagamento', 18, function (test) {
     casper.userAgent('Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)');
 
     formulario.testAutenticacao(casper);
@@ -184,7 +208,7 @@ casper.test.begin('assertExists() tests', 8, function (test) {
 
     //Verificando se o funcionário está sendo listado, alteração na quantidade de linhas
     casper.then(function () {
-        test.assertElementCount('table', oldLines + 1, 'Verificando se houve alteração na quantidade de funcionários para mais');
+        this.test.assertElementCount('table', oldLines + 1, 'Verificando se houve alteração na quantidade de funcionários para mais');
     });
  
     casper.then(function () {
@@ -195,9 +219,9 @@ casper.test.begin('assertExists() tests', 8, function (test) {
 
      });
     
-    formulario.testGerarFolhaSalarial(casper);
+    formulario.testGerarFolhaSalarial(casper,'27.82','225.00','2500.00','José Luiz');
 
-   casper.then(function () {
+    casper.then(function () {
         this.click(x('//*[@id="tabela' + (this.getResultsCount() - 1) + '"]/tbody/tr[2]/td[3]/button'));
 
     });
@@ -205,7 +229,8 @@ casper.test.begin('assertExists() tests', 8, function (test) {
     //Realizando o testes de atualização do funcionário
     formulario.testAtualizarFuncionario(casper);
 
-
+   // formulario.testGerarFolhaSalarial(casper,'365.12','550.00','5000.00','José Luiz');
+    
     //Excluindo Funcionários
     casper.then(function () {
         this.click(x('//*[@id="tabela' + (this.getResultsCount() - 1) + '"]/tbody/tr[2]/td[4]/button'));
@@ -218,7 +243,7 @@ casper.test.begin('assertExists() tests', 8, function (test) {
 
     //Verificando se houve diminuição de funcionários na lista
     casper.then(function () {
-        test.assertElementCount('table', oldLines - 1, 'Verificando se houve alteração na quantidade de funcionários para menos');
+       this.test.assertElementCount('table', oldLines - 1, 'Verificando se houve alteração na quantidade de funcionários Após a exclusão');
     });
     casper.then(function () {
 

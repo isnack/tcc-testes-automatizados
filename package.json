@@ -4,10 +4,10 @@
   "description": "Trabalho de conclusão de curso sobre testes automatizados no desenvolvimento de software",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test:$TEST_SUITE",
+    "test": "mocha",
     "testFunctional":"./node_modules/.bin/casperjs test testFuncional/functionalTest.js",
     "start": "http-server ./ -p 8585",
-    "restServer":"node server.js test:$TEST_SUITE",
+    "restServer":"node server.js",
     "preinstall": "npm i -g istanbul http-server",
     "coveralls-local": "istanbul cover ./node_modules/mocha/bin/_mocha",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info |             ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
