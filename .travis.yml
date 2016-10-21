@@ -1,6 +1,6 @@
 services:
     - mongodb
-     & sleep 3
+    - http-server & sleep 3
 language: node_js
 node_js:
     - "4"
