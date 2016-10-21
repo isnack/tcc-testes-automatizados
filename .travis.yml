@@ -1,16 +1,15 @@
 services:
     - mongodb
-    -http-server & sleep 3 & npm run testFunctional & sleep 3
+    -http-server & sleep 3
 language: node_js
 node_js:
     - "4"
     - "6"
 before_script:
     - npm install
-    - npm run restServer
-script:
+    script:
     - npm test
-     
+    - npm run testFunctional
 after_script:
     - npm run coveralls
 
