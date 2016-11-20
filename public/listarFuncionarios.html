@@ -18,7 +18,7 @@
 <div id="buttonAddFunc"><button type="button" class="btn btn-primary " ng-click="abrirAdicionarFuncionario()">Adicionar</button></div>
 
 <div class="divTable">
- <table id="tabela" class="table table-striped" ng-repeat="funcionario in funcionarios">
+ <table id="tabela{{$index}}" class="table table-striped tabela" ng-repeat="funcionario in funcionarios">
   <tr>
     <th>Nome</th>
     <th>Ação</th>

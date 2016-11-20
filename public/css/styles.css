@@ -42,7 +42,7 @@
     
 }
 
-#tabela tr td:nth-child(1){
+.tabela tr td:nth-child(1){
     width:30%;
 }
 
@@ -90,4 +90,7 @@ h4{
 	margin-left: auto;
 	margin-right: auto;
 
+}
+.negrito{
+	font-weight:bold;
 }

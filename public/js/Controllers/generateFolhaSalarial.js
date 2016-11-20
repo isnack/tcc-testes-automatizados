@@ -12,7 +12,10 @@ angular.module("folhaPagamento").controller("generateFolhaSalarial",function($sc
 		});
         
     };
-    
+     $scope.voltarPagina =function(){
+        
+        $window.location.href="listarFuncionarios.html";
+    };
     
      carregarFuncionario =function(id){  
       funcionarioServices.getFuncionario(id).success(function (funcionario) {

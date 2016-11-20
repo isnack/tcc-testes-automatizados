@@ -1,22 +1,88 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="folhaPagamento">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <title>Folha Salarial</title>
 </head>
-<body  ng-controller="generateFolhaSalarial">
-    
-    {{folhaSalarial.valorReferencia.refInss}}
-    {{funcionario}}
-    
-    
-    <script src="../node_modules/angular/angular.js"></script> 
+
+<body ng-controller="generateFolhaSalarial">
+
+
+
+    <table class="table table-bordered">
+       <thead>
+            <tr>
+            <th colspan="5">Nome: {{folhaSalarial.funcionario.nome}}</th>
+            
+        </tr>
+        </thead>
+        <tr class="negrito">
+            <td></td>
+            <td>Descrição</td>
+            <td>Referência</td>
+            <td>Vencimentos</td>
+            <td>Descontos</td>
+        </tr>
+        
+        <tr>
+           <td></td>
+            <td class="negrito">Salário</td>
+            <td> - </td>
+            <td>{{folhaSalarial.funcionario.salario.toFixed(2)}}</td>
+            <td> - </td>
+            
+        </tr>
+        <tr>
+           <td></td>
+           <td class="negrito">IR</td>
+           <td>{{folhaSalarial.valorReferencia.refIr}}</td>
+           <td> - </td>
+           <td>{{folhaSalarial.descontos.ir.toFixed(2)}}</td>
+        </tr>
+        <tr>
+           <td></td>
+            <td class="negrito">INSS</td>
+            <td>{{folhaSalarial.valorReferencia.refInss}}</td>
+           <td> - </td>
+           <td>{{folhaSalarial.descontos.inss.toFixed(2)}}</td>
+        </tr>
+        <tr>
+            <td>  </td>
+            <td> - </td>
+            <td> - </td>
+           <td class="negrito">Total Vencimentos</td>
+           <td class="negrito">Total Descontos</td>
+        </tr>
+        <tr>
+           <td>  </td>
+            <td> - </td>
+            <td> - </td>
+           <td>{{folhaSalarial.funcionario.salario.toFixed(2)}}</td>
+           <td>{{folhaSalarial.descontos.totalDescontos.toFixed(2)}}</td> 
+            
+        </tr>
+        
+          <tr>
+           <td>  </td>
+            <td> - </td>
+            <td> - </td>
+           <td class="negrito">Valor Líquido</td>
+           <td>{{folhaSalarial.salarioLiquido.toFixed(2)}}</td> 
+            
+        </tr>
+    </table>
+ <input ng-click="voltarPagina()"  class="btn btn-primary" type="button" value="Voltar"/>
+
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
     <script src="js/app.js"></script>
     <script src="js/Services/funcionarioServices.js"></script>
     <script src="js/Controllers/generateFolhaSalarial.js"></script>
 </body>
 
- 
+
 </html>
