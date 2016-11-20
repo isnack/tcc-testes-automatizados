@@ -4,7 +4,7 @@ var IRService = require('../app/services/IRService')
 
 describe('Bateria de testes do modulo IR', function () {
 
-    it('Testando desconto de IR de 7,5&', function () {
+    it('Testando desconto de IR de 7,5%', function () {
         expect(IRService.calculate(2500)).to.be.closeTo(44.70,0.01);
     });
 
