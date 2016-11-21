@@ -17,4 +17,4 @@ notifications:
     - lah_spfc2010@hotmail.com
     - isnack.yagami@gmail.com
     
-     on_success: always
+  on_success: always
