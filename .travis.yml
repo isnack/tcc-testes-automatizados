@@ -17,8 +17,6 @@ notifications:
   email:
     - lah_spfc2010@hotmail.com
     - isnack.yagami@gmail.com
-    - edysegura@gmail.com
-    - andremartinsgti@gmail.com
-    - mecva@tmit.com.br
+    
     
   on_success: always
