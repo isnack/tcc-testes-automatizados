@@ -1,0 +1,188 @@
+\chapter{QUADRO TEÓRICO}
+
+\par Neste capítulo foram descritos os principais conceitos e características das tecnologias a serem utilizadas para o desenvolvimento do \textit {software} utilizado para demonstrar o uso dos testes automatizados.
+
+\section{Técnicas de Testes}
+
+\par As técnicas de testes são ferramentas importantes para a melhoria do \textit{software} no passo a passo do seu desenvolvimento.
+\begin{citacao}
+
+ \par Segundo \citeonline{engenharia}" Atualmente existem muitas maneiras de se testar um \textit {software}. Mesmo assim, existem as técnicas que sempre foram muito utilizadas em sistemas desenvolvidos sobre linguagens estruturadas que ainda hoje têm grande valia para os sistemas orientados a objeto. Apesar de os paradigmas de desenvolvimento serem completamente diferentes, o objetivo principal destas técnicas continua a ser o mesmo: encontrar falhas no \textit {software}".
+ 
+\end{citacao}
+
+\par As técnicas de testes são conhecidas como:  Teste Estrutural (caixa branca) e Teste Funcional (caixa preta), os quais serão melhor discutidos a seguir.
+
+ \textbf{Teste Estrutural} é uma técnica também chamada de caixa-branca, que tem por objetivo avaliar o comportamento interno do componente de \textit{software}. Pode-se construir códigos para efetuar a ligação de bibliotecas e componentes \cite{tecnicas}.
+ 
+ \par Nesse tipo de técnica o analista tem total acesso à estrutura interna do \textit{software} a ser analisado e, portanto, os testes são projetados com maior precisão e eficiência.
+ 
+ \par Esse tipo de procedimento é desenvolvido analisando-se o código fonte e elaborando-se casos de teste que cubram todas as possibilidades do componente de \textit software. Dessa maneira, todas as variações originadas por estruturas de condições são testadas. Um exemplo prático desta técnica é o uso da ferramenta JUnit para desenvolvimento de classes de teste (\textit{ test cases}) para verificar classes ou métodos desenvolvidos em Java\cite{engenharia}.
+
+\par Segundo \citeonline{branca}, É um método de projeto de testes que usa a estrutura de controle do projeto procedimental para derivar casos de teste.
+
+ \textbf{Teste Funcional} é uma técnica também chamada de caixa-preta, no qual o componente de \textit{software} a ser testado é abordado como se estivesse dentro de uma caixa preta, cujo conteúdo é desconhecido e na qual só é possível visualizar o lado externo, ou seja, os dados de entrada fornecidos e as respostas produzidas como saída. Portanto, não se leva em consideração o comportamento interno do mesmo.
+ 
+ \par Esse tipo de teste revela a forma como o usuário vê o sistema, pois o interesse dele é servir-se do software sem considerar os detalhes de sua construção. É particularmente útil para revelar problemas, como :
+ 
+ \begin{itemize}
+     \item funções incorretas ou omitidas;
+     \item erros de interface;
+     \item erros de comportamento ou desempenho;
+     \item erros de iniciação e término.
+ \end{itemize}
+
+ 
+\par Um exemplo dessa aplicação é verificar a consistência de dados de interface, com isso, o analista implementa entradas erradas de dados e observa qual vai ser o comportamento do \textit{software} \cite{qualidade}.
+
+
+
+\section{Fases de Testes}
+
+\par Os testes estiveram presentes em todo o processo de desenvolvimento de \textit{software}, ajudando a reduzir os erros do sistema. E foram divididos nas seguintes fases:
+
+ \textbf{Teste de Unidade}: também conhecido como testes unitários, tem por objetivo testar as menores unidades de software desenvolvidas e encontrar falhas de funcionamento dentro dessa pequena fase testada, independentemente do todo. Além de dar um \textit{fast feedback} \footnote{resposta rápida.} para o desenvolvimento \cite{unidade}.
+    
+\textbf{Testes de Integração}: as unidades do sistema foram testadas de forma combinada e o objetivo é detectar falhas na interação entre as unidades integradas. Não fazem parte dessa fase os testes de integração com outros sistemas. Esses testes são realizados depois do de unidade e antes do funcional. Ex: Na integração do cadastro de clientes com a função que valida CPF; as duas unidades já foram testadas individualmente na fase de testes de unidade, neste momento é realizada a interação entre elas e feita a validação \cite{integracao}. 
+    
+\textbf{Teste de Funcional}: o objetivo foi testar o sistema do ponto de vista do usuário final, assim, buscando possíveis falhas; o teste ocorreu dentro de condições similares de ambiente, interfaces e sistêmicas e massas de dados, as quais o usuário executa no seu dia-a-dia.
+
+  \begin{comment}      
+\textbf{ Teste de Aceitação}: o objetivo final foi verificar se o sistema desenvolvido está de acordo com o que foi solicitado. É escolhido um grupo restrito de usuários finais para simularem as operações de rotina do sistema.
+  
+
+ \textbf{ Teste de Regressão}: não corresponde a um nível de teste, mas é uma estratégia importante para a redução de "efeitos colaterais". Consiste em aplicar, a cada nova versão do software ou a cada ciclo, todos os procedimentos anteriormente aplicados nos mesmos. Para ter o aumento da produtividade e a viabilidade dos testes, é necessário o uso de ferramentas de automação, em uma nova versão ou ciclo, e verificar se foram reexecutados com agilidade e precisão.
+\end{comment}    
+
+\section{Test Driven Development - TDD}
+
+\par É uma prática de desenvolvimento de \textit{software} derivado da metodologia \textit{Extreme Programming}, na qual a sua prática consiste em criar os testes primeiramente antes da implementação do código fonte. São feitos os seguintes passos no TDD: primeiramente cria-se um teste e execute-o logo em seguida, após esse teste falhar é feita a implementação do código fonte.
+
+\par Os testes são executados novamente e deverão passar, deste modo, após os testes passarem é necessário verificar a necessidade de melhorar o código. Caso haja alteração no código, os testes serão executados novamente e caso os testes não passem, é feita a correção do erro para os testes passarem novamente. Entre um dos maiores benefícios do TDD é o \textit{feedback} (retorno rápido) para o programador, pois isso é feito de maneira rápida e as falhas são identificadas mais rapidamente \cite{tdd}.
+
+\par O simples ato de inverter a ordem, no caso de realizar os testes antes de codificar, traz diversos benefícios para um projeto.
+As baterias de testes tendem a serem maiores  e assim garantindo maior qualidade no código produzido \cite{tdd2}.
+
+
+\section{Integração Contínua}
+
+\par É um termo originado na metodologia ágil XP\footnote{Extreme Programming}, sua função é simples: o desenvolvedor integra o código que foi alterado e/ou desenvolvido ao projeto principal na mesma frequência com que as funcionalidades são desenvolvidas. Utilizando a integração contínua é possível verificar se as novas alterações ou funcionalidades que foram criadas não causam defeitos no projeto já existente \cite{integracao}.
+
+\newpage
+\par Dessa forma os erros de integração podem ser detectados mais rapidamente. Muitas equipes perceberam que essa abordagem leva a uma redução significativa nos problemas de integração \cite{integracao} . 
+\begin{citacao}
+
+\par Segundo \citeonline{integracaoContinua}: "Integração Contínua é uma pratica de desenvolvimento de \textit{software} no qual os membros de um time integram seu trabalho frequentemente, geralmente cada pessoa integra pelo menos diariamente – podendo haver múltiplas integrações por dia. Cada integração é verificada por um \textit{build} automatizado (incluindo testes) para detectar erros de integração o mais rápido possível."
+\end{citacao}
+
+\par A ferramenta que será utilizada para fazer a integração contínua é o \textit{TravisCI} que será explicado na secção ferramentas.
+
+
+
+
+\section{Relatório de Cobertura}
+
+\par A cobertura mede o quanto um grupo de testes examina a capacidade de um determinado software. É a medida da abrangência do teste, indicando o nível de confiança atribuído a ele.
+
+\par Essa métrica permite verificar se todas as funcionalidades e/ou unidades do sistema estão sendo testadas corretamente. Em um conjunto de itens a serem testados, a cobertura nos mostra a porção a qual foi realmente testada.
+
+\par O relatório de cobertura indica a integridade dos testes, sem tratar da efetividade dos mesmos, podendo ser usado como critério de parada dos testes.
+
+\par Deste modo, a cobertura dos testes é mostrada em porcentagem. Por exemplo, se o resultado de cobertura de testes é de 100\%, isso indica que foi essa a porcentagem de declarações do programa as quais foram analisadas, mas não necessariamente que o sistema como um todo foi realmente testado \cite{relatorio}.
+
+ \subsection{Cobertura de testes baseada em código.}
+
+ \par A medida da cobertura de teste baseada em código é efetuada a partir da quantidade de código executado durante o período de testes em comparação à quantidade total de código pendente de execução.
+
+\par A cobertura pode ser baseada em fluxos de controle ou em fluxos de dados. Nos fluxos de controle são testadas linhas de código, ou seja, se o código foi exercitado pelos testes, condições de ramificação, caminhos que percorrem o código ou outros elementos do fluxo de controle do software. No fluxo de dados, o objetivo é testar se os estados dos dados permanecem válidos durante a operação do software, como, por exemplo, se um elemento de dados é definido antes de ser usado.
+
+\par Caso algum código não seja executado no teste, a equipe de desenvolvedores poderá se reunir para determinar quais os casos de teste são considerados ou então se há alguma implementação do software cuja funcionalidade não tenha sido especificada \cite{relatorio}.
+
+\section{Ferramentas}
+
+\par As ferramentas foram utilizadas para facilitar, auxiliar e automatizar o processo dos \textit{Tester} e dos desenvolvedores, e tinham por objetivo entregar um \textit{software} de alta qualidade e sem \textit{bugs}. Utilizamos várias ferramentas  na fase de testes. No escopo deste trabalho citaremos os mais importantes para compor o arcabouço teórico deste projeto:
+
+
+\textbf{NodeJS} é uma plataforma construída em cima do \textit{JavaScript}, para construir aplicações de rede rápidas e escaláveis, utiliza-se o modelo de I/O \footnote{Input and Onput} direcionado a evento não bloqueante, isso o torna, leve e eficiente \cite{node}.
+ 
+ \textbf{PhantomJS} é um \textit{headless browser}, ou seja, ele  renderiza as páginas e só  as demonstra graficamente, programável em \textit{JavaScript}, algumas de suas funcionalidades são automação de página, captura de tela, monitoramento de rede \cite{phantom}.
+
+ \textbf{CasperJS} é um \textit{script} de navegação de código aberto, sua licença é gratuita e é escrito em \textit{JavaScript} para \textit{PhantonJS}, ele facilita o processo de definição de um cenário de navegação completo e fornece funções de alto nível, tais como:
+ \begin{itemize}
+     \item Preenchimento e envio de formulários;
+      \item Capturar imagens de uma página (ou parte dele);
+      \item Escrever conjuntos de testes funcionais, salvar os resultados como XML JUnit, entre outros \cite{casper}.
+ \end{itemize}
+ 
+ \textbf{TravisCI} é um serviço de integração contínua, pode ser conectado ao repositório do GitHub e é suportado por várias linguagens de programação como:
+ \begin{itemize}
+     \item  C;
+     \item C++;
+     \item Java;
+     \item JavaScript.
+ \end{itemize}
+ 
+
+\textbf{Mocha} é um \textit{framework} de teste em \textit{JavaScript}, tornando simples testes assíncronos, \cite{mocha}.
+
+\textbf{Chai} é uma biblioteca de \textit{frameworks} de testes em \textit{JavaScript}, na qual os desenvolvedores criam seus próprios \textit{plugins}. Será utilizada nesse projeto juntamente com outros \textit{frameworks,} para realização dos testes \cite{chai}.
+
+
+\textbf{Mongoose} é uma ferramenta de gerenciamento para modelar o banco de dados \textit{MongoDB} de uma forma simples e direta. No projeto foi utilizado para facilitar a manipulação dos dados inseridos na aplicação \cite{Mongoose}.
+
+\textbf{NPM} é um gerenciador de pacotes que já vem pré-instalado com o \textit{Node.js}, essa ferramenta auxilia o desenvolvedor a instalar o código e gerenciar as dependências através da linha de comando, \cite{NPM}.
+
+\textbf{Restify} é um módulo do \textit{node.js} construído especificamente para criar\textit{ web services REST} corretamente. Ele empresta muitas características do \textit{express} e é conhecido de fato como uma API para construir aplicações \textit{web} em cima do \textit{node.js} \cite{restify}.
+
+\textbf{IstanbulJS} é uma biblioteca de cobertura de código para \textit{JavaScript}, é possível verificar a cobertura de código nas funções e declarações no código. Possui relatórios nos formatos \textit{HTML} e \textit{LCOV}, pode ser utilizado como linha de comando , um dos seus casos de uso é a utilização na cobertura transparente de testes de unidade para \textit{NodeJS} \cite{istanbul}.
+
+\par Para fazer verificações no sistema e entregar um \textit{software} de alta qualidade, o desenvolvedor pode contar com o auxílio dessas ferramentas e dessas técnicas, reduzindo assim o tempo e o custo no desenvolvimento do mesmo.
+     
+
+\section{Tecnologias \textit{Web}}
+\par As tecnologias \textit{web} surgiram e foram bem aproveitadas pelos desenvolvedores de \textit{softwares}, e através das várias linguagens de programação eles conseguiram abranger a exigência dos diversos segmentos de usuários.
+
+\textbf{Rest} é \textit{Representational State Transfer} (Transferência de Estado Representativo. Segundo \citeonline{rest}: "é um estilo de desenvolvimento de \textit{web services} que teve origem na tese de doutorado de Roy Fielding. Este, por sua vez, e co-autor de um dos protocolos mais utilizados no mundo, o HTTP\footnote{HyperText Transfer Protocol}".
+ 
+\par Os métodos são responsáveis por provocar alterações nos recursos identificados pelas \textit{URL's}: \footnote{Universal Resource Locator}
+\begin{itemize}
+    \item \textit{Get} recupera recursos;
+    \item \textit{Post} cria um novo recurso;
+    \item \textit{Put} atualiza um recurso;
+    \item \textit{Delete} apaga um recurso.
+\end{itemize}
+
+\par \textit{Rest} não só utiliza protocolo HTTP, como maneira de transmitir dados, mas também como um protocolo de aplicação que permite uma maior visibilidade para os componentes intermediários; diminuindo assim o acoplamento entre o cliente e o servidor \cite{rest2}.
+
+
+
+
+
+
+
+\textbf{MongoDB} é um banco de dados orientados a documentos, utiliza-se o conceito de dados de documentos auto contidos e auto descritivos. Sua característica principal é que todas as informações são livres de esquemas, possuem identificadores únicos universais e permite a consulta de documentos através de métodos avançados de agrupamento e filtragem. \cite{mongo}
+  
+
+\textbf{HTML} é uma linguagem de marcação de hipertexto que é utilizada na construção de páginas \textit{web}, criado por Tim Berners-Lee \cite{html}.
+
+
+\textbf{CSS} tem como finalidade a formatação da pagina \textit{web}, como determinar cores, tamanho, fontes, efeitos e etc \cite{maujor}.
+
+\textbf{JAVASCRIPT} é uma linguagem leve, interpretada e baseada em objetos com funções de primeira classe. Por ser uma linguagem de \textit{script} multi-paradigma ela suporta estilos de programação orientado a objetos, imperativo e funcional \cite{javascript}.
+
+\textbf{AngularJS} é um \textit{framework} em \textit{JavaScript} para criação de aplicações \textit{web} dinâmicas. Uma das suas principais características é eliminar grande parte do código que você teria de escrever, com isso levando parte da lógica das funcionalidades dos componentes direto para o HTML através das diretivas \cite{angular}.
+
+\textbf{Bootstrap} é um \textit{framework} criado pelo \textit{Twitter} no qual oferece uma base de estilos para criação de aplicações e páginas \textit{web}, sendo um projeto \textit{opensource} ganhou vários adeptos pelo mundo \cite{boostrap}.
+
+
+
+
+
+
+
+
+\par Com isso, criou-se um sistema \textit{web} de folha de pagamento, a partir do uso das tecnologias descritas acima, e assim, demonstrando como os testes automatizados funcionam.
+
+
+
+
