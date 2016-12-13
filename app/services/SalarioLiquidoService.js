@@ -1,7 +1,7 @@
-/**
- * Created by Lais on 29/07/2016.
- * Módulo responsável por realizar o calculo do salário liquido informando o salário bruto
- */
+
+
+/*** Created by Lais on 29/07/2016.
+ * Módulo responsável por realizar o calculo do salário liquido informando o salário bruto*/
 
 //Declaração de Serviços
 var  IRService = require('./IRService')
@@ -30,3 +30,5 @@ calculate:function (salario) {
 };
 
 module.exports =  SalarioLiquidoService;
+
+
