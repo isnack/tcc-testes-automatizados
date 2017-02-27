@@ -12,12 +12,12 @@
                return "Teto";
            }
 
-           return "0";
+           return '0 %';
       },
         referenciaIr:function(salario){
             
             if (salario < 1903.98) {
-                return "0";
+                return "0 %";
             } else if (salario >= 1903.99 && salario <= 2826.65) {
                 return "7,5 %";
             }
