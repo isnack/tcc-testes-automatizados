@@ -26,7 +26,7 @@ describe('Bateria de testes do serviço de valor referência', function () {
     // IR
 
 
-    it('Testando valor refencia do de 7,5&', function () {
+    it('Testando valor refencia do de 7,5%', function () {
         expect(valorReferenciaService.referenciaIr(2500)).to.equal('7,5 %');
     });
 
