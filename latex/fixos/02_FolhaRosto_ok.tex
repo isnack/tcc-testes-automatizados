@@ -1,0 +1,40 @@
+% folha de rosto 
+%\folhaderostoname{Folha de rosto}
+%htt% folha de rosto 
+%\folhaderostoname{Folha de rosto}
+%http://code.google.com/p/abntex2/wiki/ComoCustomizar
+
+\makeatletter
+\renewcommand{\folhaderostocontent}{
+\begin{center}%
+  {\MakeUppercase\imprimirinstituicao}\\%tirei o \Large
+  {\MakeUppercase\imprimirautor}\\
+  \vspace*{\fill}%
+  \vspace*{\fill}%
+  \vspace*{\fill}%
+  {\MakeUppercase\imprimirtitulo}\\
+  \vspace*{\fill}%
+\abntex@ifnotempty{\imprimirpreambulo}{%
+  \hspace{.45\textwidth}
+  \begin{minipage}{.5\textwidth}
+    \SingleSpacing
+    \imprimirpreambulo
+  \vspace{.1\textwidth}\\%
+  {\imprimirorientadorRotulo:~\imprimirorientador}
+  \abntex@ifnotempty{\imprimircoorientador}{%
+    \hspace{.45\textwidth}
+    {\imprimircoorientadorRotulo~:\imprimircoorientador}%
+  }%
+  \end{minipage}%
+}%
+  \vspace*{\fill}\\%
+  %{\ABNTEXchapterfont\large\bfseries\MakeUppercase\imprimirinstituicao}
+  %{\large\bfseries\MakeUppercase\imprimirlocal}\\
+  %{\large\bfseries\MakeUppercase\imprimirdata}
+  {\MakeUppercase\imprimirlocal}\\
+  {\MakeUppercase\imprimirdata}
+\end{center}
+}%end of folhaderostocontent
+\makeatother
+
+\imprimirfolhaderosto*{}

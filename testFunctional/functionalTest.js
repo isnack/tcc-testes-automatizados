@@ -1,4 +1,4 @@
-//var casper = require('casper').create();
+﻿//var casper = require('casper').create();
 var mouse = require("mouse").create(casper);
 var x = require('casper').selectXPath;
 var oldLines = 0;
@@ -163,7 +163,7 @@ var formulario = {
         });
         casper.then(function () {
             this.capture('testFunctional/img/teste6.png');
-            this.test.assertExists(x("/html/body/table/tbody/tr[4]/td[5][normalize-space()='"+descontoInss+"']"),'Testando o valor de desconto do IR está impresso');
+            this.test.assertExists(x("/html/body/table/tbody/tr[4]/td[5][normalize-space()='"+descontoInss+"']"),'Testando o valor de desconto do INSS está impresso');
         });
         casper.then(function(){
             

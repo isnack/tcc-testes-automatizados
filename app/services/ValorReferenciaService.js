@@ -1,8 +1,4 @@
-
-
-
-
-    var ValorRefenciaService = {
+ var ValorRefenciaService = {
 
         referenciaInss:function(salario){
 
@@ -15,12 +11,10 @@
            }else if (salario >= 5189.93){
                return "Teto";
            }
-
-
            return "0";
-        },
-
+      },
         referenciaIr:function(salario){
+            
             if (salario < 1903.98) {
                 return "0";
             } else if (salario >= 1903.99 && salario <= 2826.65) {
@@ -33,14 +27,6 @@
             } else if (salario >= 4664.69) {
                 return "27,5 %";
             }
-
-
         }
     };
-
-
-   
-
-
-
     module.exports = ValorRefenciaService;
