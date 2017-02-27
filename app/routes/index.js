@@ -125,12 +125,12 @@ var routes ={
           
       });
   },
-    
+
     authenticationUser:function(req,res,next){
       var usuario = req.body;
         console.log(usuario);
       Usuario.find({$and:[{usuario:usuario.usuario },{senha:usuario.senha }]},function(err,result){
-         
+
         if(err==null){
             if(result != null){
                console.log(result);
@@ -143,38 +143,44 @@ var routes ={
         }else{
             res.send(500,err);
         }
-            
-        
-          
-          
+
+
+
+
       }); 
     },
-    
+
     createUser:function(req,res,next){
-        
-        var usuario =req.body;    
+
+        //var usuario =req.body;    
         var usuario={
             usuario:"admin",
             senha:"admin"            
         };
-        
-     Usuario.add(usuario,function(err,result){
-     console.log(result);
-        if(err==null){
-            if(result != null){
-               res.send(200,result);
+            Usuario.find(usuario,function(err,result){
+
+                if(result.length==0){
+                    console.log(result);
+                       Usuario.create(usuario);
+                      
+
+             
+
+                if(result != null){
+                   res.send(200,"Usuario Administrador criado com sucesso!, Acesso o endereço http://127.0.0.1:8585/public/ para realizar o login no sistema");
+                }else{
+                   res.send(404); 
+                }
             }else{
-               res.send(404); 
+                res.send(200,"Usuário Administrador já existente");
             }
-        }else{
-            res.send(500,err);
-        }
-        
-     });
+
+    });
+
     }
-    
-    
-    
+
+
+
 };
 
 module.exports=routes;

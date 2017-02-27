@@ -5,9 +5,9 @@ language: node_js
 node_js:
     - "4"
     - "6"
+    - "7"
 before_script:
     - npm install
-    - npm install istanbul -g
 script:
     - npm test
 after_script:
@@ -17,3 +17,6 @@ notifications:
   email:
     - lah_spfc2010@hotmail.com
     - isnack.yagami@gmail.com
+    
+    
+  on_success: always

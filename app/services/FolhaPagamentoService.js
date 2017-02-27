@@ -8,7 +8,7 @@ var salLiquidoService =require('./SalarioLiquidoService')
 var FolhaPagamentoService = {
     
     generate:function(funcionario){
-        var descontoInss,descontoIR,salarioLiquido,valRefInss,valRefIr;
+        var descontoInss,descontoIR,salarioLiquido,valRefInss,valRefIr,totalDescontos;
         
        
         // setor que recebe valor do desconto inss e imposto de renda e salario líquido além dos valores referência de desconto do inss e ir
@@ -17,10 +17,12 @@ var FolhaPagamentoService = {
         descontoIR = irService.calculate(funcionario[0].salario-descontoInss);
         valRefIr = valorRefenciaService.referenciaIr(funcionario[0].salario-descontoInss);
         salarioLiquido = salLiquidoService.calculate(funcionario[0].salario);
+        totalDescontos = descontoInss + descontoIR;
         
     var descontos ={
          inss:descontoInss,
-            ir:descontoIR        
+            ir:descontoIR,
+        totalDescontos:totalDescontos
     },
     valorReferencia ={
         refInss:valRefInss,
