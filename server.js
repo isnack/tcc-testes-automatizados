@@ -29,6 +29,7 @@ server.put('api/funcionarios',routes.updateFuncionarios);
 server.del('api/funcionarios/:id',routes.removeFuncionarios);
 server.get('api/folhaSal/:id',routes.getFolhaSalarial);
 server.post('api/authentication',routes.authenticationUser);
+server.get('api/createrAdminUser',routes.createUser);
 
 server.listen(port,function(){
     
