@@ -9,10 +9,12 @@ TCC Unit test integration functional
 * Instalar o Python
 [Link](https://www.python.org/downloads/)
 ## Passo 2 
+
 * Instalar e configurar o mongoDB
 [Link](https://www.mongodb.com/download-center)
 * Criar o diretório a seguir 
 C:\data\db
+
 ## Passo 3 
 * Instalar o NodeJS
 [Link](https://nodejs.org/en/download/)
@@ -21,8 +23,8 @@ C:\data\db
 * Npm install 
 * Abrir o arquivo mongod.exe encontrado na pasta bin da instalação do mongodb
 * Em janelas separadas executar os seguintes comandos
-npm run restServer
-npm start
+**npm run restServer** e
+**npm start**
 
 ## Passo 5
 * Execução dos testes unitários e de integração
