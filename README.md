@@ -20,7 +20,7 @@ C:\data\db
 [Link](https://nodejs.org/en/download/)
 
 ## Passo 4 
-* Npm install 
+* **npm install** 
 * Abrir o arquivo mongod.exe encontrado na pasta bin da instalação do mongodb
 * Em janelas separadas executar os seguintes comandos
 **npm run restServer** e
