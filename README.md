@@ -8,8 +8,8 @@ TCC Unit test integration functional
 ## Passo 1 
 * Instalar o Python
 [Link](https://www.python.org/downloads/)
-## Passo 2 
 
+## Passo 2 
 * Instalar e configurar o mongoDB
 [Link](https://www.mongodb.com/download-center)
 * Criar o diretório a seguir 
