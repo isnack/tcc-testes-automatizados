@@ -28,9 +28,9 @@ C:\data\db
 
 ## Passo 5
 * Execução dos testes unitários e de integração
-npm test
+**npm test**
 * Execução dos testes funcionais
-npm run testFunctional
+**npm run testFunctional**
 
 * Execução do relatório de cobertura
-npm run coveralls-local
+**npm run coveralls-local**
