@@ -30,6 +30,7 @@ C:\data\db
 * Execução dos testes unitários e de integração
 **npm test**
 * Execução dos testes funcionais
+* Antes de realizar o teste executar a url de criação de usuário http://localhost:3000/api/createrAdminUser e posteriormente rodar o comando a seguir 
 **npm run testFunctional**
 
 * Execução do relatório de cobertura
