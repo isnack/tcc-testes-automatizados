@@ -1,6 +1,6 @@
 /*** Created by Lais on 29/07/2016.*/
 var expect = require('chai').expect;
-var IRService = require('../app/services/IRService')
+//var IRService = require('../app/services/IRService')
 
 describe('Bateria de testes do modulo IR', function () {
 
